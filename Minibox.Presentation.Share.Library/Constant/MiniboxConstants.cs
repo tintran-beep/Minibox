@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Minibox.Presentation.Share.Library.Constant
 {
@@ -27,6 +22,12 @@ namespace Minibox.Presentation.Share.Library.Constant
 
                 return languages ?? [];
             }
+        }
+
+        public static class DbSchema
+        {
+            public const string App = "app";
+            public const string Dbo = "dbo";
         }
     }
 }

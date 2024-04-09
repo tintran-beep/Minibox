@@ -25,7 +25,6 @@
     <Folder Include="Context\Main\Schema\App\Seeding\" />
     <Folder Include="Context\Main\Schema\App\Table\" />
     <Folder Include="Context\Main\Schema\Dbo\Seeding\" />
-    <Folder Include="Context\Main\Schema\Dbo\Table\" />
   </ItemGroup>
 
 </Project>

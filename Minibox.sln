@@ -25,8 +25,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minibox.Presentation.Share.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minibox.Presentation.Share.Library", "Minibox.Presentation.Share.Library\Minibox.Presentation.Share.Library.csproj", "{3BB800DB-F2B6-4D84-A9FF-17F14FA4E445}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Minibox.Admin.WinForms.Installer", "Minibox.Admin.WinForms.Installer\Minibox.Admin.WinForms.Installer.vdproj", "{534F169E-F117-4619-AA80-52E983B31191}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,8 +55,6 @@ Global
 		{3BB800DB-F2B6-4D84-A9FF-17F14FA4E445}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB800DB-F2B6-4D84-A9FF-17F14FA4E445}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB800DB-F2B6-4D84-A9FF-17F14FA4E445}.Release|Any CPU.Build.0 = Release|Any CPU
-		{534F169E-F117-4619-AA80-52E983B31191}.Debug|Any CPU.ActiveCfg = Debug
-		{534F169E-F117-4619-AA80-52E983B31191}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,7 +69,6 @@ Global
 		{07EBA7C3-A00B-406C-A9F4-FD63235BFBC4} = {07276CEC-DB62-4C04-81DA-105FB906F648}
 		{70379D77-0389-4D45-AB2C-A512AA715437} = {07EBA7C3-A00B-406C-A9F4-FD63235BFBC4}
 		{3BB800DB-F2B6-4D84-A9FF-17F14FA4E445} = {07EBA7C3-A00B-406C-A9F4-FD63235BFBC4}
-		{534F169E-F117-4619-AA80-52E983B31191} = {E8F1536D-C3EB-40E1-AB5F-AB73C4CFFBC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E39C658E-4573-46DA-9CBF-FCAB95755782}

@@ -1,5 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 using Microsoft.Extensions.Options;
 using Minibox.Presentation.Core.Data.Context;
 using Minibox.Presentation.Core.Data.Extension;
@@ -10,17 +12,16 @@ using System.Reflection;
 
 namespace Minibox.Presentation.Core.Data.Infrastructure.Implementation
 {
-    public class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : BaseDbContext
+    public class UnitOfWork<TContext>(TContext dbContext, IOptions<AppSettings> appSettings) : IUnitOfWork<TContext> where TContext : BaseDbContext
     {
-        private readonly TContext _dbContext;
-        private readonly AppSettings _appSettings;
-        private readonly Dictionary<Type, object> _repositories;
+        private readonly TContext _dbContext = dbContext;
+        private readonly AppSettings _appSettings = appSettings.Value;
+        private readonly Dictionary<Type, object> _repositories = [];
+        private readonly SequentialGuidValueGenerator _sequentialGuidValueGenerator = new SequentialGuidValueGenerator();
 
-        public UnitOfWork(TContext dbContext, IOptions<AppSettings> appSettings)
+        public async Task<Guid> NewSequentialGuidValueAsync(EntityEntry entityEntry)
         {
-            _dbContext = dbContext;
-            _appSettings = appSettings.Value;
-            _repositories = new Dictionary<Type, object>();
+            return await _sequentialGuidValueGenerator.NextAsync(entityEntry);
         }
 
         /// <summary>
