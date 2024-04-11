@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Seeding;
 
 namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
 {
@@ -12,6 +13,7 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         public string Description { get; set; } = string.Empty;
 
         public virtual Image? Image { get; set; }
+        public virtual ICollection<Product>? Products { get; set; }
     }
 
     public class BrandEntityTypeConfiguration : IEntityTypeConfiguration<Brand>
@@ -27,6 +29,8 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
             builder.HasOne(x => x.Image).WithOne(x => x.Brand).HasForeignKey<Brand>(x => x.ImageId);
 
             builder.ToTable(name: nameof(Brand), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
+
+            builder.HasData(_Seeder.Brands());
         }
     }
 }

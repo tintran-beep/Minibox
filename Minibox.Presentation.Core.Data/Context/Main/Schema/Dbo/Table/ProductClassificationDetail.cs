@@ -13,8 +13,9 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         public string Currency { get; set; } = string.Empty;
         public decimal Price { get; set; } = 0;
         public decimal NetWeight { get; set; } = 0;
+        public string UnitWeight { get; set; } = string.Empty;
 
-        public virtual ProductClassification? ProductClassification { get; set; }
+        public virtual required ProductClassification ProductClassification { get; set; }
         public virtual Image? Image { get; set; }
     }
 
@@ -27,9 +28,10 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
             builder.Property(x => x.SKU).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Name).HasMaxLength(120).IsRequired();
             builder.Property(x => x.Currency).HasMaxLength(5).IsRequired();
+            builder.Property(x => x.UnitWeight).HasMaxLength(5).IsRequired();
 
             builder.HasOne(x => x.ProductClassification).WithMany(x => x.ProductClassificationDetails).HasForeignKey(x => x.ProductClassificationId);
-            builder.HasOne(x => x.Image).WithOne(x => x.ProductClassificationDetail).HasForeignKey<ProductClassification>(x => x.ImageId);
+            builder.HasOne(x => x.Image).WithOne(x => x.ProductClassificationDetail).HasForeignKey<ProductClassificationDetail>(x => x.ImageId);
 
             builder.ToTable(name: nameof(ProductClassificationDetail), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
         }

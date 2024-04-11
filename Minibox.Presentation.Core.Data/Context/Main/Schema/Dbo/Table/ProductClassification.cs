@@ -10,7 +10,7 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         public Guid? ImageId { get; set; }
         public string Name { get; set; } = string.Empty;
 
-        public virtual Product? Product { get; set; }
+        public virtual required Product Product { get; set; }
         public virtual Image? Image { get; set; }
         public virtual ICollection<ProductClassificationDetail>? ProductClassificationDetails { get; set; }
     }

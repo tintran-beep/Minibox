@@ -1,0 +1,27 @@
+[
+  {
+    "Id": "1AA06459-843A-4958-9D21-13E900920001",
+    "Name": "Category.Skincare",
+    "Description": "Category.Skincare.Description"
+  },
+  {
+    "Id": "1AA06459-843A-4958-9D21-13E900920002",
+    "Name": "Category.Bodycare",
+    "Description": "Category.Bodycare.Description"
+  },
+  {
+    "Id": "1AA06459-843A-4958-9D21-13E900920003",
+    "Name": "Category.Teethcare",
+    "Description": "Category.Teethcare.Description"
+  },
+  {
+    "Id": "1AA06459-843A-4958-9D21-13E900920004",
+    "Name": "Category.Haircare",
+    "Description": "Category.Haircare.Description"
+  },
+  {
+    "Id": "1AA06459-843A-4958-9D21-13E900920005",
+    "Name": "Category.Makeup",
+    "Description": "Category.Makeup.Description"
+  }
+]

@@ -21,10 +21,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Context\Main\MigrationHistory\" />
     <Folder Include="Context\Main\Schema\App\Seeding\" />
     <Folder Include="Context\Main\Schema\App\Table\" />
-    <Folder Include="Context\Main\Schema\Dbo\Seeding\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Context\Main\Schema\Dbo\Seeding\Brands.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Context\Main\Schema\Dbo\Seeding\Categories.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

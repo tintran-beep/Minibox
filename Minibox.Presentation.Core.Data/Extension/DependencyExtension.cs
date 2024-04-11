@@ -13,7 +13,7 @@ namespace Minibox.Presentation.Core.Data.Extension
         {
             services.AddDbContext<MainDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString(nameof(MainDbContext)),
-                x => x.MigrationsAssembly("BZ.Core.Data")));
+                x => x.MigrationsAssembly("Minibox.Presentation.Core.Data")));
 
             return services;
         }
@@ -31,6 +31,15 @@ namespace Minibox.Presentation.Core.Data.Extension
             {
                 var mainDbContext = scope.ServiceProvider.GetRequiredService<MainDbContext>();
                 mainDbContext.Database.Migrate();
+
+                if (!mainDbContext.Brands.Any())
+                {
+
+                }
+                if (!mainDbContext.Categories.Any())
+                {
+
+                }
             }
             return service;
         }

@@ -11,7 +11,7 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         public string Value { get; set; } = string.Empty;
         public string DataType { get; set; } = string.Empty;
 
-        public virtual Product? Product { get; set; }
+        public virtual required Product Product { get; set; }
     }
 
     public class ProductPropertyEntityTypeConfiguration : IEntityTypeConfiguration<ProductProperty>

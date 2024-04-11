@@ -389,6 +389,6 @@ namespace Minibox.Presentation.Core.Data.Extension
     public class TableInfo
     {
         public DataTable Table { get; set; } = new DataTable();
-        public IList<ColumnInfo> Columns { get; set; } = new List<ColumnInfo>();
+        public IList<ColumnInfo> Columns { get; set; } = [];
     }
 }

@@ -17,7 +17,7 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Implementation
         private readonly TContext _dbContext = dbContext;
         private readonly AppSettings _appSettings = appSettings.Value;
         private readonly Dictionary<Type, object> _repositories = [];
-        private readonly SequentialGuidValueGenerator _sequentialGuidValueGenerator = new SequentialGuidValueGenerator();
+        private readonly SequentialGuidValueGenerator _sequentialGuidValueGenerator = new();
 
         public async Task<Guid> NewSequentialGuidValueAsync(EntityEntry entityEntry)
         {
@@ -101,24 +101,24 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Implementation
                             try
                             {
                                 var entities = _dbContext.GetEntities();
-                                if (entities.Any())
+                                if (entities.Count != 0)
                                 {
                                     foreach (var item in entities)
                                     {
                                         var insertedEntities = item.Value.insertedEntities;
-                                        if (insertedEntities != null && insertedEntities.Any())
+                                        if (insertedEntities != null && insertedEntities.Count != 0)
                                         {
                                             rowEffects += await _dbContext.BulkInsertEntitiesAsync(insertedEntities, connection, transaction, _appSettings.DbContextSettings.CmdTimeOutInMiliseconds, _appSettings.DbContextSettings.BatchSize);
                                         }
 
                                         var updatedEntities = item.Value.updatedEntities;
-                                        if (updatedEntities != null && updatedEntities.Any())
+                                        if (updatedEntities != null && updatedEntities.Count != 0)
                                         {
                                             rowEffects += await _dbContext.BulkUpdateEntitiesAsync(updatedEntities, connection, transaction, _appSettings.DbContextSettings.CmdTimeOutInMiliseconds, _appSettings.DbContextSettings.BatchSize);
                                         }
 
                                         var deletedEntities = item.Value.deletedEntities;
-                                        if (deletedEntities != null && deletedEntities.Any())
+                                        if (deletedEntities != null && deletedEntities.Count != 0)
                                         {
                                             rowEffects += await _dbContext.BulkDeleteEntitiesAsync(deletedEntities, connection, transaction, _appSettings.DbContextSettings.CmdTimeOutInMiliseconds, _appSettings.DbContextSettings.BatchSize);
                                         }
