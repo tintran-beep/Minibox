@@ -4,6 +4,6 @@ namespace Minibox.Presentation.Core.Service.Infrastructure.Interface
 {
     public interface IBrandService
     {
-        Task CreateNewBrand(BrandVM brand);
+        Task Create(BrandVM brand);
     }
 }

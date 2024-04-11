@@ -5,8 +5,8 @@ using Minibox.Presentation.Share.Model.ViewModel;
 
 namespace Minibox.Presentation.App.WebApi.Controllers.Admin
 {
-    [Route("api/brand")]
     [ApiController]
+    [Route("api/brand")]
     public class BrandsController(
         IBrandService brandService) : ControllerBase
     {
@@ -17,7 +17,7 @@ namespace Minibox.Presentation.App.WebApi.Controllers.Admin
         {
             try
             {
-                await _brandService.CreateNewBrand(brand);
+                await _brandService.Create(brand);
                 return Ok();
             }
             catch (Exception ex)
