@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Minibox.Presentation.Core.Data\Minibox.Presentation.Core.Data.csproj" />
     <ProjectReference Include="..\Minibox.Presentation.Core.Service\Minibox.Presentation.Core.Service.csproj" />
     <ProjectReference Include="..\Minibox.Presentation.Share.Library\Minibox.Presentation.Share.Library.csproj" />
+    <ProjectReference Include="..\Minibox.Presentation.Share.Module\Minibox.Presentation.Share.Module.csproj" />
   </ItemGroup>
 
 </Project>

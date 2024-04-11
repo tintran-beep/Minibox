@@ -20,9 +20,7 @@ namespace Minibox.Presentation.Core.Data.Extension
 
         public static IServiceCollection AddDataAccessLayer(this IServiceCollection services)
         {
-            services.AddTransient<IUnitOfWork<MainDbContext>, UnitOfWork<MainDbContext>>();
-
-            return services;
+            return services.AddScoped<IUnitOfWork<MainDbContext>, UnitOfWork<MainDbContext>>();
         }
 
         public static IServiceProvider UseAutoMigrationForMainDbContext(this IServiceProvider service)
@@ -31,15 +29,6 @@ namespace Minibox.Presentation.Core.Data.Extension
             {
                 var mainDbContext = scope.ServiceProvider.GetRequiredService<MainDbContext>();
                 mainDbContext.Database.Migrate();
-
-                if (!mainDbContext.Brands.Any())
-                {
-
-                }
-                if (!mainDbContext.Categories.Any())
-                {
-
-                }
             }
             return service;
         }

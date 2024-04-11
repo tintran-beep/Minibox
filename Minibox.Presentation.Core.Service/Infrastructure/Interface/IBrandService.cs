@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Minibox.Presentation.Share.Model.ViewModel;
 
 namespace Minibox.Presentation.Core.Service.Infrastructure.Interface
 {
     public interface IBrandService
     {
-        Task<>
+        Task CreateNewBrand(BrandVM brand);
     }
 }
