@@ -15,7 +15,7 @@ namespace Minibox.Presentation.Core.Service.Infrastructure.Implementation
         IUnitOfWork<MainDbContext> mainUnitOfWork) 
         : BaseService(mapper, appSettings, mainUnitOfWork), IBrandService
     {
-        public async Task Create(BrandVM brand)
+        public async Task CreateAsync(BrandVM brand)
         {
             var entity = _mapper.Map<Brand>(brand);
             _mainUnitOfWork.GetRepo<Brand>().Insert(entity);

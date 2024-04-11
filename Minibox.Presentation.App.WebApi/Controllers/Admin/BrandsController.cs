@@ -13,7 +13,7 @@ namespace Minibox.Presentation.App.WebApi.Controllers.Admin
         private readonly IBrandService _brandService = brandService;
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateNewBrandAsync(BrandVM brand)
+        public async Task<IActionResult> CreateAsync(BrandVM brand)
         {
             try
             {
