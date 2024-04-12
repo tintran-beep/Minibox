@@ -28,7 +28,7 @@ namespace Minibox.Presentation.Core.Data.Extension
             using (var scope = service.CreateScope())
             {
                 var mainDbContext = scope.ServiceProvider.GetRequiredService<MainDbContext>();
-                mainDbContext.Database.Migrate();
+                mainDbContext.Database.Migrate();                
             }
             return service;
         }

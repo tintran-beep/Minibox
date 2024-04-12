@@ -1,31 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.ValueGeneration;
-using Minibox.Presentation.Share.Library.Constant;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Minibox.Presentation.Share.Library.Constant;
+using System.Runtime.InteropServices;
 
 namespace Minibox.Presentation.Share.Library.Common
 {
-    public class CommonHelper
-    {
-        private static readonly SequentialGuidValueGenerator _generator;
-
-        /// <summary>
-        /// Initialize
-        /// </summary>
-        static CommonHelper()
-        {
-            _generator = new SequentialGuidValueGenerator();
-        }
-
-        /// <summary>
-        /// New sequential GUID
-        /// </summary>
-        /// <returns></returns>
-        public static Guid NewSequenceGuid() => _generator.Next(null);
-
+    public partial class CommonHelper
+    {        
         /// <summary>
         /// Retry
         /// </summary>
@@ -68,11 +47,18 @@ namespace Minibox.Presentation.Share.Library.Common
             return number.ToString("000000");
         }
 
-        /// <summary>
-        /// Reset concurrency token
-        /// </summary>
-        /// <returns></returns>
-        public static string ResetConcurrencyToken() => NewSequenceGuid().ToString().ToUpper();
+        
+        [LibraryImport("rpcrt4.dll", SetLastError = true)]
+        private static partial int UuidCreateSequential(out Guid guid);
+        public static Guid NewSequenceGuid()
+        {
+            const int RPC_S_OK = 0;
+            int hr = UuidCreateSequential(out Guid g);
+            if (hr != RPC_S_OK)
+                throw new ApplicationException
+                  ("UuidCreateSequential failed: " + hr);
+            return g;
+        }
 
         /// <summary>
         /// Check email address is valid or not
@@ -81,16 +67,14 @@ namespace Minibox.Presentation.Share.Library.Common
         /// <returns></returns>
         public static bool IsValidEmailAddress(string email)
         {
-            var trimmedEmail = email.Trim();
-
-            if (trimmedEmail.EndsWith("."))
+            if (string.IsNullOrWhiteSpace(email))
             {
                 return false;
             }
             try
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == trimmedEmail;
+                var addr = new System.Net.Mail.MailAddress(email.Trim());
+                return addr.Address == email.Trim();
             }
             catch
             {

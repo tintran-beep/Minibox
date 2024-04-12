@@ -17,12 +17,6 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Implementation
         private readonly TContext _dbContext = dbContext;
         private readonly AppSettings _appSettings = appSettings.Value;
         private readonly Dictionary<Type, object> _repositories = [];
-        private readonly SequentialGuidValueGenerator _sequentialGuidValueGenerator = new();
-
-        public async Task<Guid> NewSequentialGuidValueAsync(EntityEntry entityEntry)
-        {
-            return await _sequentialGuidValueGenerator.NextAsync(entityEntry);
-        }
 
         /// <summary>
         /// Return Repository of type TEntity

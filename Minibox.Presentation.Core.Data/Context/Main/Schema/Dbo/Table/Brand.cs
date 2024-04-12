@@ -6,6 +6,10 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
 {
     public class Brand : BaseEntity
     {
+        public Brand()
+        {
+            Id = Share.Library.Common.CommonHelper.NewSequenceGuid();
+        }
         public Guid Id { get; set; }
         public Guid? ImageId { get; set; }
         public string Name { get; set; } = string.Empty;
@@ -30,7 +34,7 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
 
             builder.ToTable(name: nameof(Brand), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
 
-            builder.HasData(_Seeder.Brands());
+            builder.HasData(Seeder.Brands());
         }
     }
 }

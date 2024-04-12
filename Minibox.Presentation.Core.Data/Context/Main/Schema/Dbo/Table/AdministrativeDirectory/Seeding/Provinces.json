@@ -1,0 +1,443 @@
+[
+  {
+    "Id": "4c00147b-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Thành phố Hà Nội",
+    "Code": "01",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0016dd-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Hà Giang",
+    "Code": "02",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0017aa-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Cao Bằng",
+    "Code": "04",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001856-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bắc Kạn",
+    "Code": "06",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0018cb-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Tuyên Quang",
+    "Code": "08",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c00195d-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Lào Cai",
+    "Code": "10",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0019ff-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Điện Biên",
+    "Code": "11",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001a8b-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Lai Châu",
+    "Code": "12",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001afe-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Sơn La",
+    "Code": "14",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001bd7-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Yên Bái",
+    "Code": "15",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001c8e-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Hoà Bình",
+    "Code": "17",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001d30-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Thái Nguyên",
+    "Code": "19",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001deb-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Lạng Sơn",
+    "Code": "20",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001ebf-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Quảng Ninh",
+    "Code": "22",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c001f7e-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bắc Giang",
+    "Code": "24",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c00205a-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Phú Thọ",
+    "Code": "25",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002149-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Vĩnh Phúc",
+    "Code": "26",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0021db-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bắc Ninh",
+    "Code": "27",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002262-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Hải Dương",
+    "Code": "30",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c00235a-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Thành phố Hải Phòng",
+    "Code": "31",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002444-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Hưng Yên",
+    "Code": "33",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0024f0-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Thái Bình",
+    "Code": "34",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0025fd-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Hà Nam",
+    "Code": "35",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002671-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Nam Định",
+    "Code": "36",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c00275e-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Ninh Bình",
+    "Code": "37",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0027f6-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Thanh Hóa",
+    "Code": "38",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002a40-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Nghệ An",
+    "Code": "40",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002c22-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Hà Tĩnh",
+    "Code": "42",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002d08-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Quảng Bình",
+    "Code": "44",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002da8-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Quảng Trị",
+    "Code": "45",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002e30-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Thừa Thiên Huế",
+    "Code": "46",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002ec7-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Thành phố Đà Nẵng",
+    "Code": "48",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c002f08-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Quảng Nam",
+    "Code": "49",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c00300c-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Quảng Ngãi",
+    "Code": "51",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0030c7-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bình Định",
+    "Code": "52",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c003172-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Phú Yên",
+    "Code": "54",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0031ea-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Khánh Hòa",
+    "Code": "56",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c00327f-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Ninh Thuận",
+    "Code": "58",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0032c8-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bình Thuận",
+    "Code": "60",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c00334f-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Kon Tum",
+    "Code": "62",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0033c0-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Gia Lai",
+    "Code": "64",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0034ae-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Đắk Lắk",
+    "Code": "66",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c003576-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Đắk Nông",
+    "Code": "67",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0035c6-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Lâm Đồng",
+    "Code": "68",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c003661-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bình Phước",
+    "Code": "70",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0036dc-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Tây Ninh",
+    "Code": "72",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c003744-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bình Dương",
+    "Code": "74",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0037a9-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Đồng Nai",
+    "Code": "75",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c00385f-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bà Rịa - Vũng Tàu",
+    "Code": "77",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c0038ba-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Thành phố Hồ Chí Minh",
+    "Code": "79",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c003a09-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Long An",
+    "Code": "80",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4c003ad5-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Tiền Giang",
+    "Code": "82",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27d674-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bến Tre",
+    "Code": "83",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27d71b-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Trà Vinh",
+    "Code": "84",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27d78f-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Vĩnh Long",
+    "Code": "86",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27d803-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Đồng Tháp",
+    "Code": "87",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27d89f-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh An Giang",
+    "Code": "89",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27d947-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Kiên Giang",
+    "Code": "91",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27d9e7-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Thành phố Cần Thơ",
+    "Code": "92",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27da44-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Hậu Giang",
+    "Code": "93",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27da98-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Sóc Trăng",
+    "Code": "94",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27db11-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Bạc Liêu",
+    "Code": "95",
+    "ZipCode": ""
+  },
+  {
+    "Id": "4e27db59-f89d-11ee-ad1e-f889d243ee30",
+    "CountryId": "4c00147a-f89d-11ee-ad1e-f889d243ee30",
+    "Name": "Tỉnh Cà Mau",
+    "Code": "96",
+    "ZipCode": ""
+  }
+]

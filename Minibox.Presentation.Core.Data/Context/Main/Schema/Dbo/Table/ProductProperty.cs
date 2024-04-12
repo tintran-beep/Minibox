@@ -5,6 +5,10 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
 {
     public class ProductProperty : BaseEntity
     {
+        public ProductProperty()
+        {
+            Id = Share.Library.Common.CommonHelper.NewSequenceGuid();
+        }
         public Guid Id { get; set; }
         public Guid ProductId { get; set; }
         public string Name { get; set; } = string.Empty;

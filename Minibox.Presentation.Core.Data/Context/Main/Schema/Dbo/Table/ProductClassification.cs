@@ -5,6 +5,10 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
 {
     public class ProductClassification : BaseEntity
     {
+        public ProductClassification()
+        {
+            Id = Share.Library.Common.CommonHelper.NewSequenceGuid();
+        }
         public Guid Id { get; set; }
         public Guid ProductId { get; set; }
         public Guid? ImageId { get; set; }

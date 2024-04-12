@@ -1,11 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table;
+using Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.AdministrativeDirectory;
 
 namespace Minibox.Presentation.Core.Data.Context.Main
 {
     public class MainDbContext(DbContextOptions options) : BaseDbContext(options)
     {
         #region Schema: dbo
+
+        //Administrative Directory
+        public virtual DbSet<Address> Addresses { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<District> Districts { get; set; }
+        public virtual DbSet<Province> Provinces { get; set; }
+        public virtual DbSet<Ward> Wards { get; set; }
+        //------------------------
+
         public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Image> Images { get; set; }
@@ -20,6 +30,19 @@ namespace Minibox.Presentation.Core.Data.Context.Main
         protected override void OnModelCreating(ModelBuilder builder)
         {
             #region Schema: dbo
+
+            //Administrative Directory
+            new AddressEntityTypeConfiguration().Configure(builder.Entity<Address>());
+
+            new AddressEntityTypeConfiguration().Configure(builder.Entity<Address>());
+
+            new DistrictEntityTypeConfiguration().Configure(builder.Entity<District>());
+
+            new ProvinceEntityTypeConfiguration().Configure(builder.Entity<Province>());
+
+            new WardEntityTypeConfiguration().Configure(builder.Entity<Ward>());
+            //------------------------
+
             new BrandEntityTypeConfiguration().Configure(builder.Entity<Brand>());
 
             new CategoryEntityTypeConfiguration().Configure(builder.Entity<Category>());

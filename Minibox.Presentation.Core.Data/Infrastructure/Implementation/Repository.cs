@@ -67,6 +67,16 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Implementation
             _dbSet.RemoveRange(_dbSet.Where(predicate));
         }
 
+        public virtual async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await _dbSet.CountAsync(predicate);
+        }
+
+        public virtual async Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate) 
+        {
+            return await _dbSet.AnyAsync(predicate);
+        }
+
         public virtual IQueryable<TEntity> Query(bool isNoTracking = false)
         {
             if (isNoTracking)

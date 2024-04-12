@@ -6,6 +6,10 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
 {
     public class Category : BaseEntity
     {
+        public Category()
+        {
+            Id = Share.Library.Common.CommonHelper.NewSequenceGuid();
+        }
         public Guid Id { get; set; }
         public Guid? ImageId { get; set; }
         public string Name { get; set; } = string.Empty;
@@ -28,7 +32,7 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
 
             builder.ToTable(name: nameof(Category), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
 
-            builder.HasData(_Seeder.Categories());
+            builder.HasData(Seeder.Categories());
         }
     }
 }

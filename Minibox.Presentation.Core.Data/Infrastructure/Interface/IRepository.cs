@@ -17,6 +17,9 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Interface
         void Delete(IEnumerable<TEntity> entities);
         void Delete(Expression<Func<TEntity, bool>> predicate);
 
+        Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate);
+
         IQueryable<TEntity> Query(bool isNoTracking = false);
         IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate, bool isNoTracking = false);
     }

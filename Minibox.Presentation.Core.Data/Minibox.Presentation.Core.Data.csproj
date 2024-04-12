@@ -32,6 +32,18 @@
     <None Update="Context\Main\Schema\Dbo\Seeding\Categories.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Context\Main\Schema\Dbo\Table\AdministrativeDirectory\Seeding\Countries.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Context\Main\Schema\Dbo\Table\AdministrativeDirectory\Seeding\Districts.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Context\Main\Schema\Dbo\Table\AdministrativeDirectory\Seeding\Provinces.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Context\Main\Schema\Dbo\Table\AdministrativeDirectory\Seeding\Wards.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
