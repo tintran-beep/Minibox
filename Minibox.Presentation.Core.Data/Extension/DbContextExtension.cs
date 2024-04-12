@@ -31,7 +31,7 @@ namespace Minibox.Presentation.Core.Data.Extension
         public static Dictionary<Type, (List<object> insertedEntities, List<object> updatedEntities, List<object> deletedEntities)> GetEntities(this DbContext dbContext)
         {
             return dbContext.ChangeTracker.Entries().Where(x => x.State == EntityState.Added || x.State == EntityState.Modified || x.State == EntityState.Deleted)
-                                          .GroupBy(x => x.Entity.GetType()).ToDictionary(x => x.Key, x => SplitEntity(x.ToList()));
+                                          .GroupBy(x => x.Entity.GetType()).ToDictionary(x => x.Key, x => SplitEntity([.. x]));
         }
 
         /// <summary>

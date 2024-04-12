@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Minibox.Presentation.Core.Data.Context.Main;
-using Minibox.Presentation.Core.Service.Infrastructure.Implementation;
+using Minibox.Presentation.Core.Service.Infrastructure.Interface;
 
 
 namespace Minibox.Presentation.Core.Service.Extension
@@ -30,8 +29,16 @@ namespace Minibox.Presentation.Core.Service.Extension
         {
             using (var scope = serviceProvider.CreateScope())
             {
-                var service = scope.ServiceProvider.GetRequiredService<AdministrativeDirectoryService>();
-                await service.SeedAsync();
+                try
+                {
+                    var service = scope.ServiceProvider.GetRequiredService<IAdministrativeDirectoryService>();
+                    await service.SeedAsync();
+                }
+                catch (Exception ex)
+                {
+
+                }
+                
             }
             return serviceProvider;
         }

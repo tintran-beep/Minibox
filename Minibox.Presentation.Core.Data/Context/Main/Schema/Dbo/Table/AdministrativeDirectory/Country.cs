@@ -23,12 +23,11 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.Administr
         {
             builder.HasKey(x => x.Id);
             builder.HasIndex(x => x.Name).IsUnique();
-            builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
-
             builder.HasIndex(x => x.Code).IsUnique();
-            builder.Property(x => x.Code).HasMaxLength(10).IsRequired();
-
             builder.HasIndex(x => x.PrefixPhoneCode).IsUnique();
+
+            builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.Code).HasMaxLength(10).IsRequired();
             builder.Property(x => x.PrefixPhoneCode).HasMaxLength(10).IsRequired();
 
             builder.ToTable(name: nameof(Country), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);

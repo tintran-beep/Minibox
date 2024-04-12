@@ -9,22 +9,22 @@ namespace Minibox.Presentation.Core.Data.Context.Main
         #region Schema: dbo
 
         //Administrative Directory
-        public virtual DbSet<Address> Addresses { get; set; }
-        public virtual DbSet<Country> Countries { get; set; }
-        public virtual DbSet<District> Districts { get; set; }
-        public virtual DbSet<Province> Provinces { get; set; }
-        public virtual DbSet<Ward> Wards { get; set; }
+        public virtual DbSet<Address> Address { get; set; }
+        public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<District> District { get; set; }
+        public virtual DbSet<Province> Province { get; set; }
+        public virtual DbSet<Ward> Ward { get; set; }
         //------------------------
 
-        public virtual DbSet<Brand> Brands { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Image> Images { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductClassification> ProductClassifications { get; set; }
-        public virtual DbSet<ProductClassificationDetail> ProductClassificationsDetails { get; set; }
-        public virtual DbSet<ProductOtherImage> ProductOtherImages { get; set; }
-        public virtual DbSet<ProductProperty> ProductProperties { get; set; }
-        public virtual DbSet<Video> Videos { get; set; }
+        public virtual DbSet<Brand> Brand { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Image> Image { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<ProductClassification> ProductClassification { get; set; }
+        public virtual DbSet<ProductClassificationDetail> ProductClassificationsDetail { get; set; }
+        public virtual DbSet<ProductOtherImage> ProductOtherImage { get; set; }
+        public virtual DbSet<ProductProperty> ProductPropertie { get; set; }
+        public virtual DbSet<Video> Video { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder builder)
