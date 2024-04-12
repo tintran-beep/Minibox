@@ -29,7 +29,8 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 //Auto Migration
-app.Services.UseAutoMigrationForMainDbContext();
+await app.Services.MigrateAsync();
+await app.Services.SeedAdministrativeDirectoryDataAsync();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

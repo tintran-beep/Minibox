@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.AdministrativeDirectory.Seeding;
 
 namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.AdministrativeDirectory
 {
@@ -33,8 +32,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.Administr
             builder.Property(x => x.PrefixPhoneCode).HasMaxLength(10).IsRequired();
 
             builder.ToTable(name: nameof(Country), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
-
-            //builder.HasData(Seeder.Countries());
         }
     }
 }

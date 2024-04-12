@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Minibox.Presentation.Core.Data.Context;
 using Minibox.Presentation.Core.Data.Infrastructure.Interface;
@@ -65,6 +66,11 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Implementation
         public virtual void Delete(Expression<Func<TEntity, bool>> predicate)
         {
             _dbSet.RemoveRange(_dbSet.Where(predicate));
+        }
+
+        public virtual async Task<bool> AnyAsync()
+        {
+            return await _dbSet.AnyAsync();
         }
 
         public virtual async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)

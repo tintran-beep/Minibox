@@ -14,8 +14,8 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         public Guid? ImageId { get; set; }
         public string SKU { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
-        public string Currency { get; set; } = string.Empty;
         public decimal Price { get; set; } = 0;
+        public string UnitPrice { get; set; } = string.Empty;
         public decimal NetWeight { get; set; } = 0;
         public string UnitWeight { get; set; } = string.Empty;
 
@@ -31,8 +31,12 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
             builder.HasIndex(x => x.SKU).IsUnique();
             builder.Property(x => x.SKU).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Name).HasMaxLength(120).IsRequired();
-            builder.Property(x => x.Currency).HasMaxLength(5).IsRequired();
+
+            builder.Property(x => x.UnitPrice).HasMaxLength(5).IsRequired();
             builder.Property(x => x.UnitWeight).HasMaxLength(5).IsRequired();
+
+            builder.Property(x => x.Price).HasColumnType("decimal(18,2)").IsRequired();
+            builder.Property(x => x.NetWeight).HasColumnType("decimal(18,2)").IsRequired();
 
             builder.HasOne(x => x.ProductClassification).WithMany(x => x.ProductClassificationDetails).HasForeignKey(x => x.ProductClassificationId);
             builder.HasOne(x => x.Image).WithOne(x => x.ProductClassificationDetail).HasForeignKey<ProductClassificationDetail>(x => x.ImageId);

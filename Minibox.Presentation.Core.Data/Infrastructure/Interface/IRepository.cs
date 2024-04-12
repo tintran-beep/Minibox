@@ -17,6 +17,7 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Interface
         void Delete(IEnumerable<TEntity> entities);
         void Delete(Expression<Func<TEntity, bool>> predicate);
 
+        Task<bool> AnyAsync();
         Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate);
         Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate);
 

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.AdministrativeDirectory.Seeding;
 
 namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.AdministrativeDirectory
 {
@@ -29,13 +28,11 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.Administr
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
 
             builder.Property(x => x.Code).HasMaxLength(10);
-            builder.Property(x => x.ZipCode).HasMaxLength(20);
+            builder.Property(x => x.ZipCode).HasMaxLength(10);
 
             builder.HasOne(x => x.District).WithMany(x => x.Wards).HasForeignKey(x => x.DistrictId);
 
             builder.ToTable(name: nameof(Ward), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
-
-            //builder.HasData(Seeder.Wards());
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Minibox.Presentation.Core.Data.Context.Main;
+using Minibox.Presentation.Core.Service.Infrastructure.Implementation;
 
 
 namespace Minibox.Presentation.Core.Service.Extension
@@ -22,6 +24,16 @@ namespace Minibox.Presentation.Core.Service.Extension
             }
 
             return services;
+        }
+
+        public static async Task<IServiceProvider> SeedAdministrativeDirectoryDataAsync(this IServiceProvider serviceProvider)
+        {
+            using (var scope = serviceProvider.CreateScope())
+            {
+                var service = scope.ServiceProvider.GetRequiredService<AdministrativeDirectoryService>();
+                await service.SeedAsync();
+            }
+            return serviceProvider;
         }
     }
 }

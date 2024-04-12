@@ -23,12 +23,12 @@ namespace Minibox.Presentation.Core.Data.Extension
             return services.AddScoped<IUnitOfWork<MainDbContext>, UnitOfWork<MainDbContext>>();
         }
 
-        public static IServiceProvider UseAutoMigrationForMainDbContext(this IServiceProvider service)
+        public static async Task<IServiceProvider> MigrateAsync(this IServiceProvider service)
         {
             using (var scope = service.CreateScope())
             {
-                var mainDbContext = scope.ServiceProvider.GetRequiredService<MainDbContext>();
-                mainDbContext.Database.Migrate();                
+                using var mainDbContext = scope.ServiceProvider.GetRequiredService<MainDbContext>();
+                await mainDbContext.Database.MigrateAsync();                
             }
             return service;
         }
