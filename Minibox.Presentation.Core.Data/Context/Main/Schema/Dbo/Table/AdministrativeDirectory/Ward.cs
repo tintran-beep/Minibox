@@ -24,7 +24,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.Administr
         public void Configure(EntityTypeBuilder<Ward> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasIndex(x => x.Name).IsUnique();
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
 
             builder.Property(x => x.Code).HasMaxLength(10);

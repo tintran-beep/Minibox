@@ -22,10 +22,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table.Administr
         public void Configure(EntityTypeBuilder<Country> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasIndex(x => x.Name).IsUnique();
-            builder.HasIndex(x => x.Code).IsUnique();
-            builder.HasIndex(x => x.PrefixPhoneCode).IsUnique();
-
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Code).HasMaxLength(10).IsRequired();
             builder.Property(x => x.PrefixPhoneCode).HasMaxLength(10).IsRequired();
