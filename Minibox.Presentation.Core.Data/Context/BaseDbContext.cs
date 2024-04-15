@@ -2,11 +2,7 @@
 
 namespace Minibox.Presentation.Core.Data.Context
 {
-    public class BaseDbContext : DbContext
+    public class BaseDbContext(DbContextOptions options) : DbContext(options)
     {
-        public BaseDbContext(DbContextOptions options) : base(options)
-        {
-
-        }
     }
 }
