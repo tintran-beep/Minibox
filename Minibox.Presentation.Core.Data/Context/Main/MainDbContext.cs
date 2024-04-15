@@ -20,6 +20,7 @@ namespace Minibox.Presentation.Core.Data.Context.Main
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Image> Image { get; set; }
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategory { get; set; }
         public virtual DbSet<ProductClassification> ProductClassification { get; set; }
         public virtual DbSet<ProductClassificationDetail> ProductClassificationsDetail { get; set; }
         public virtual DbSet<ProductOtherImage> ProductOtherImage { get; set; }
@@ -50,6 +51,8 @@ namespace Minibox.Presentation.Core.Data.Context.Main
             new ImageEntityTypeConfiguration().Configure(builder.Entity<Image>());
 
             new ProductEntityTypeConfiguration().Configure(builder.Entity<Product>());
+
+            new ProductCategoryEntityTypeConfiguration().Configure(builder.Entity<ProductCategory>());
 
             new ProductClassificationEntityTypeConfiguration().Configure(builder.Entity<ProductClassification>());
 

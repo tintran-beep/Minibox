@@ -11,7 +11,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         }
         public Guid Id { get; set; }
         public Guid? BrandId { get; set; }
-        public Guid? CategoryId { get; set; }
         public Guid? CoverImageId { get; set; }
         public Guid? CoverVideoId { get; set; }
         public string SKU { get; set; } = string.Empty;
@@ -22,7 +21,9 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         public virtual Category? Category { get; set; }
         public virtual Image? CoverImage { get; set; }
         public virtual Video? CoverVideo { get; set; }
+
         public virtual ICollection<ProductProperty>? ProductProperties { get; set; }
+        public virtual ICollection<ProductCategory>? ProductCategories { get; set; }
         public virtual ICollection<ProductOtherImage>? ProductOtherImages { get; set; }
         public virtual ICollection<ProductClassification>? ProductClassifications { get; set; }
     }
@@ -41,7 +42,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
             builder.HasOne(x => x.CoverVideo).WithOne(x => x.Product).HasForeignKey<Product>(x => x.CoverVideoId);
 
             builder.HasOne(x => x.Brand).WithMany(x => x.Products).HasForeignKey(x => x.BrandId);
-            builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId);
 
             builder.ToTable(name: nameof(Product), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
         }

@@ -109,12 +109,19 @@ namespace Minibox.Presentation.Core.Data.Context.Main.MigrationHistory
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ImageId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ParentId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(3000)", maxLength: 3000, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Category", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Category_Category_ParentId",
+                        column: x => x.ParentId,
+                        principalSchema: "dbo",
+                        principalTable: "Category",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Category_Image_ImageId",
                         column: x => x.ImageId,
@@ -153,12 +160,12 @@ namespace Minibox.Presentation.Core.Data.Context.Main.MigrationHistory
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BrandId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CoverImageId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CoverVideoId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     SKU = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Name = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(3000)", maxLength: 3000, nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(3000)", maxLength: 3000, nullable: false),
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -208,6 +215,33 @@ namespace Minibox.Presentation.Core.Data.Context.Main.MigrationHistory
                         column: x => x.DistrictId,
                         principalSchema: "dbo",
                         principalTable: "District",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductCategory",
+                schema: "dbo",
+                columns: table => new
+                {
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductCategory", x => new { x.ProductId, x.CategoryId });
+                    table.ForeignKey(
+                        name: "FK_ProductCategory_Category_CategoryId",
+                        column: x => x.CategoryId,
+                        principalSchema: "dbo",
+                        principalTable: "Category",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProductCategory_Product_ProductId",
+                        column: x => x.ProductId,
+                        principalSchema: "dbo",
+                        principalTable: "Product",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -350,19 +384,109 @@ namespace Minibox.Presentation.Core.Data.Context.Main.MigrationHistory
                 schema: "dbo",
                 table: "Brand",
                 columns: new[] { "Id", "Description", "ImageId", "Name", "Origin" },
-                values: new object[] { new Guid("1aa06459-843a-4958-9d21-13e900920001"), "", null, "No brand", "" });
+                values: new object[,]
+                {
+                    { new Guid("22da518d-faf0-11ee-ad1e-f889d243ee30"), "", null, "No brand", "" },
+                    { new Guid("22da518e-faf0-11ee-ad1e-f889d243ee30"), "", null, "Cosrx", "Korean" },
+                    { new Guid("22da518f-faf0-11ee-ad1e-f889d243ee30"), "", null, "Estée Lauder", "USA" },
+                    { new Guid("22da5190-faf0-11ee-ad1e-f889d243ee30"), "", null, "Laneige", "Korean" },
+                    { new Guid("22da5191-faf0-11ee-ad1e-f889d243ee30"), "", null, "Foodaholic", "Korean" },
+                    { new Guid("22da5192-faf0-11ee-ad1e-f889d243ee30"), "", null, "L''Oréal Paris", "France" },
+                    { new Guid("22da5193-faf0-11ee-ad1e-f889d243ee30"), "", null, "Dear, Klairs", "Korean" },
+                    { new Guid("22da5194-faf0-11ee-ad1e-f889d243ee30"), "", null, "Ceiba Tree", "France" },
+                    { new Guid("22da5195-faf0-11ee-ad1e-f889d243ee30"), "", null, "Habaria", "China" },
+                    { new Guid("22da5196-faf0-11ee-ad1e-f889d243ee30"), "", null, "Angel's Liquid", "Korean" },
+                    { new Guid("22da5197-faf0-11ee-ad1e-f889d243ee30"), "", null, "BNBG", "Korean" },
+                    { new Guid("22da5198-faf0-11ee-ad1e-f889d243ee30"), "", null, "Simple", "England" },
+                    { new Guid("22da5199-faf0-11ee-ad1e-f889d243ee30"), "", null, "Redwin", "Australia" },
+                    { new Guid("22da519a-faf0-11ee-ad1e-f889d243ee30"), "", null, "Silky Hands", "Russia" },
+                    { new Guid("22da519b-faf0-11ee-ad1e-f889d243ee30"), "", null, "Olay", "USA" },
+                    { new Guid("22da519c-faf0-11ee-ad1e-f889d243ee30"), "", null, "Vaseline", "England" },
+                    { new Guid("22da519d-faf0-11ee-ad1e-f889d243ee30"), "", null, "MartiDerm La Formula", "Spain" },
+                    { new Guid("22da519e-faf0-11ee-ad1e-f889d243ee30"), "", null, "Skin1004", "Korean" },
+                    { new Guid("22da519f-faf0-11ee-ad1e-f889d243ee30"), "", null, "Hatomugi", "Japan" },
+                    { new Guid("22da51a0-faf0-11ee-ad1e-f889d243ee30"), "", null, "Silcot", "Japan" },
+                    { new Guid("22da51a1-faf0-11ee-ad1e-f889d243ee30"), "", null, "A BONNE", "Thailand" },
+                    { new Guid("22da51a2-faf0-11ee-ad1e-f889d243ee30"), "", null, "Evoluderm", "France" },
+                    { new Guid("22da51a3-faf0-11ee-ad1e-f889d243ee30"), "", null, "Bioderma", "France" },
+                    { new Guid("22da51a4-faf0-11ee-ad1e-f889d243ee30"), "", null, "Balance Active Fomular", "England" },
+                    { new Guid("22da51a5-faf0-11ee-ad1e-f889d243ee30"), "", null, "The Odinary", "Canadian" },
+                    { new Guid("22da51a6-faf0-11ee-ad1e-f889d243ee30"), "", null, "Huxley", "Korean" },
+                    { new Guid("22da51a7-faf0-11ee-ad1e-f889d243ee30"), "", null, "Dr.G", "Korean" },
+                    { new Guid("22da51a8-faf0-11ee-ad1e-f889d243ee30"), "", null, "Dr.SkinCare", "Korean" },
+                    { new Guid("22da51a9-faf0-11ee-ad1e-f889d243ee30"), "", null, "Ziaja", "Poland" },
+                    { new Guid("22da51aa-faf0-11ee-ad1e-f889d243ee30"), "", null, "9Wishes", "Korean" },
+                    { new Guid("22da51ab-faf0-11ee-ad1e-f889d243ee30"), "", null, "BYPHASSE", "Spain" },
+                    { new Guid("22da51ac-faf0-11ee-ad1e-f889d243ee30"), "", null, "ANESSA", "Japan" },
+                    { new Guid("22da51ad-faf0-11ee-ad1e-f889d243ee30"), "", null, "Vichy", "France" },
+                    { new Guid("22da51ae-faf0-11ee-ad1e-f889d243ee30"), "", null, "MEDIAN", "Korean" },
+                    { new Guid("22da51af-faf0-11ee-ad1e-f889d243ee30"), "", null, "Hada Labo", "Japan" },
+                    { new Guid("22da51b0-faf0-11ee-ad1e-f889d243ee30"), "", null, "Rosette", "Japan" },
+                    { new Guid("22da51b1-faf0-11ee-ad1e-f889d243ee30"), "", null, "MARVIS", "Italian" },
+                    { new Guid("22da51b2-faf0-11ee-ad1e-f889d243ee30"), "", null, "Mediheal", "Korean" },
+                    { new Guid("22da51b3-faf0-11ee-ad1e-f889d243ee30"), "", null, "Forencos", "Korean" },
+                    { new Guid("22da51b4-faf0-11ee-ad1e-f889d243ee30"), "", null, "Timeless", "USA" },
+                    { new Guid("22da51b5-faf0-11ee-ad1e-f889d243ee30"), "", null, "Embryolisse", "France" },
+                    { new Guid("22da51b6-faf0-11ee-ad1e-f889d243ee30"), "", null, "Cell Fusion C", "Korean" },
+                    { new Guid("22da51b7-faf0-11ee-ad1e-f889d243ee30"), "", null, "CeraVe", "USA" },
+                    { new Guid("22da51b8-faf0-11ee-ad1e-f889d243ee30"), "", null, "Propolinse", "Japan" },
+                    { new Guid("22da51b9-faf0-11ee-ad1e-f889d243ee30"), "", null, "Elasten", "Germany" },
+                    { new Guid("22da51ba-faf0-11ee-ad1e-f889d243ee30"), "", null, "Scentio", "Thailand" },
+                    { new Guid("22da51bb-faf0-11ee-ad1e-f889d243ee30"), "", null, "White Conc", "Japan" },
+                    { new Guid("22da51bc-faf0-11ee-ad1e-f889d243ee30"), "", null, "La Roche-Posay", "France" },
+                    { new Guid("22da51bd-faf0-11ee-ad1e-f889d243ee30"), "", null, "DHC", "Japan" }
+                });
 
             migrationBuilder.InsertData(
                 schema: "dbo",
                 table: "Category",
-                columns: new[] { "Id", "Description", "ImageId", "Name" },
+                columns: new[] { "Id", "Description", "ImageId", "Name", "ParentId" },
                 values: new object[,]
                 {
-                    { new Guid("1aa06459-843a-4958-9d21-13e900920001"), "Category.Skincare.Description", null, "Category.Skincare" },
-                    { new Guid("1aa06459-843a-4958-9d21-13e900920002"), "Category.Bodycare.Description", null, "Category.Bodycare" },
-                    { new Guid("1aa06459-843a-4958-9d21-13e900920003"), "Category.Teethcare.Description", null, "Category.Teethcare" },
-                    { new Guid("1aa06459-843a-4958-9d21-13e900920004"), "Category.Haircare.Description", null, "Category.Haircare" },
-                    { new Guid("1aa06459-843a-4958-9d21-13e900920005"), "Category.Makeup.Description", null, "Category.Makeup" }
+                    { new Guid("cdab81bb-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chưa phân loại", null },
+                    { new Guid("cdab81bc-faf2-11ee-ad1e-f889d243ee30"), "", null, "Nước hoa", null },
+                    { new Guid("cdab81c1-faf2-11ee-ad1e-f889d243ee30"), "", null, "Trang điểm", null },
+                    { new Guid("cdab81c7-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chăm sóc tóc", null },
+                    { new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chăm sóc da mặt", null },
+                    { new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chăm sóc cơ thể", null },
+                    { new Guid("cdab81df-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chăm sóc cá nhân", null },
+                    { new Guid("cdab81e4-faf2-11ee-ad1e-f889d243ee30"), "", null, "Thực phẩm chức năng", null },
+                    { new Guid("cdab81bd-faf2-11ee-ad1e-f889d243ee30"), "", null, "Nước hoa nữ", new Guid("cdab81bc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81be-faf2-11ee-ad1e-f889d243ee30"), "", null, "Nước hoa nam", new Guid("cdab81bc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81bf-faf2-11ee-ad1e-f889d243ee30"), "", null, "Nước hoa vùng kín", new Guid("cdab81bc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81c0-faf2-11ee-ad1e-f889d243ee30"), "", null, "Xịt thơm toàn thân", new Guid("cdab81bc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81c2-faf2-11ee-ad1e-f889d243ee30"), "", null, "Trang điểm môi", new Guid("cdab81c1-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81c3-faf2-11ee-ad1e-f889d243ee30"), "", null, "Trang điểm mặt", new Guid("cdab81c1-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81c4-faf2-11ee-ad1e-f889d243ee30"), "", null, "Trang điểm mắt", new Guid("cdab81c1-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81c5-faf2-11ee-ad1e-f889d243ee30"), "", null, "Trang điểm móng", new Guid("cdab81c1-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81c6-faf2-11ee-ad1e-f889d243ee30"), "", null, "Bộ dụng cụ trang điểm", new Guid("cdab81c1-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81c8-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dầu xả", new Guid("cdab81c7-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81c9-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dầu gội", new Guid("cdab81c7-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81ca-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dưỡng tóc", new Guid("cdab81c7-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81cb-faf2-11ee-ad1e-f889d243ee30"), "", null, "Tẩy tế bào chết da đầu", new Guid("cdab81c7-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81cd-faf2-11ee-ad1e-f889d243ee30"), "", null, "Làm sạch da", new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81ce-faf2-11ee-ad1e-f889d243ee30"), "", null, "Đặc trị", new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81cf-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dưỡng ẩm", new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d0-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dưỡng mắt", new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d1-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dưỡng môi", new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d2-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chống nắng da mặt", new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d3-faf2-11ee-ad1e-f889d243ee30"), "", null, "Mặt nạ", new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d4-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dụng cụ chăm sóc da mặt", new Guid("cdab81cc-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d6-faf2-11ee-ad1e-f889d243ee30"), "", null, "Sữa tắm", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d7-faf2-11ee-ad1e-f889d243ee30"), "", null, "Xà phòng", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d8-faf2-11ee-ad1e-f889d243ee30"), "", null, "Tẩy tế bào chết body", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81d9-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dưỡng da tay/chân", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81da-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chống nắng cơ thể", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81db-faf2-11ee-ad1e-f889d243ee30"), "", null, "Khử mùi", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81dc-faf2-11ee-ad1e-f889d243ee30"), "", null, "Tẩy lông/triệt lông", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81dd-faf2-11ee-ad1e-f889d243ee30"), "", null, "Dưỡng thể", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81de-faf2-11ee-ad1e-f889d243ee30"), "", null, "Bộ dụng cụ chăm sóc cơ thể", new Guid("cdab81d5-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81e0-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chăm sóc phụ nữ", new Guid("cdab81df-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81e1-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chăm sóc răng miệng", new Guid("cdab81df-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81e2-faf2-11ee-ad1e-f889d243ee30"), "", null, "Chăm sóc sức khỏe", new Guid("cdab81df-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81e3-faf2-11ee-ad1e-f889d243ee30"), "", null, "Khăn giấy/ khăn ướt", new Guid("cdab81df-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81e5-faf2-11ee-ad1e-f889d243ee30"), "", null, "Hỗ trợ làm đẹp", new Guid("cdab81e4-faf2-11ee-ad1e-f889d243ee30") },
+                    { new Guid("cdab81e6-faf2-11ee-ad1e-f889d243ee30"), "", null, "Hỗ trợ sức khỏe", new Guid("cdab81e4-faf2-11ee-ad1e-f889d243ee30") }
                 });
 
             migrationBuilder.CreateIndex(
@@ -400,6 +524,12 @@ namespace Minibox.Presentation.Core.Data.Context.Main.MigrationHistory
                 table: "Category",
                 column: "Name",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Category_ParentId",
+                schema: "dbo",
+                table: "Category",
+                column: "ParentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_District_ProvinceId",
@@ -441,6 +571,12 @@ namespace Minibox.Presentation.Core.Data.Context.Main.MigrationHistory
                 table: "Product",
                 column: "SKU",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCategory_CategoryId",
+                schema: "dbo",
+                table: "ProductCategory",
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductClassification_ImageId",
@@ -514,6 +650,10 @@ namespace Minibox.Presentation.Core.Data.Context.Main.MigrationHistory
         {
             migrationBuilder.DropTable(
                 name: "Address",
+                schema: "dbo");
+
+            migrationBuilder.DropTable(
+                name: "ProductCategory",
                 schema: "dbo");
 
             migrationBuilder.DropTable(

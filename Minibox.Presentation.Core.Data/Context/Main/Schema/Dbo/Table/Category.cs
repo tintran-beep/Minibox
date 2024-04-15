@@ -12,11 +12,14 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         }
         public Guid Id { get; set; }
         public Guid? ImageId { get; set; }
+        public Guid? ParentId { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 
         public virtual Image? Image { get; set; }
-        public virtual ICollection<Product>? Products { get; set; }
+        public virtual Category? Parent { get; set; }
+        public virtual ICollection<Category>? Children { get; set; }
+        public virtual ICollection<ProductCategory>? ProductCategories { get; set; }
     }
 
     public class CategoryEntityTypeConfiguration : IEntityTypeConfiguration<Category>
@@ -29,6 +32,7 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
             builder.Property(x => x.Description).HasMaxLength(3000).IsRequired();
 
             builder.HasOne(x => x.Image).WithOne(x => x.Category).HasForeignKey<Category>(x => x.ImageId);
+            builder.HasOne(x => x.Parent).WithMany(x => x.Children).HasForeignKey(x => x.ParentId);
 
             builder.ToTable(name: nameof(Category), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
 

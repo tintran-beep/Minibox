@@ -1,27 +1,310 @@
 [
   {
-    "Id": "1AA06459-843A-4958-9D21-13E900920001",
-    "Name": "Category.Skincare",
-    "Description": "Category.Skincare.Description"
+    "Id": "cdab81bb-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": null,
+    "Name": "Chưa phân loại",
+    "Description": ""
   },
   {
-    "Id": "1AA06459-843A-4958-9D21-13E900920002",
-    "Name": "Category.Bodycare",
-    "Description": "Category.Bodycare.Description"
+    "Id": "cdab81bc-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": null,
+    "Name": "Nước hoa",
+    "Description": ""
   },
   {
-    "Id": "1AA06459-843A-4958-9D21-13E900920003",
-    "Name": "Category.Teethcare",
-    "Description": "Category.Teethcare.Description"
+    "Id": "cdab81bd-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81bc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Nước hoa nữ",
+    "Description": ""
   },
   {
-    "Id": "1AA06459-843A-4958-9D21-13E900920004",
-    "Name": "Category.Haircare",
-    "Description": "Category.Haircare.Description"
+    "Id": "cdab81be-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81bc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Nước hoa nam",
+    "Description": ""
   },
   {
-    "Id": "1AA06459-843A-4958-9D21-13E900920005",
-    "Name": "Category.Makeup",
-    "Description": "Category.Makeup.Description"
+    "Id": "cdab81bf-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81bc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Nước hoa vùng kín",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c0-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81bc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Xịt thơm toàn thân",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c1-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": null,
+    "Name": "Trang điểm",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c2-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c1-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Trang điểm môi",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c3-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c1-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Trang điểm mặt",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c4-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c1-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Trang điểm mắt",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c5-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c1-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Trang điểm móng",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c6-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c1-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Bộ dụng cụ trang điểm",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c7-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": null,
+    "Name": "Chăm sóc tóc",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c8-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c7-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dầu xả",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81c9-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c7-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dầu gội",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81ca-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c7-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dưỡng tóc",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81cb-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81c7-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Tẩy tế bào chết da đầu",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": null,
+    "Name": "Chăm sóc da mặt",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81cd-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Làm sạch da",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81ce-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Đặc trị",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81cf-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dưỡng ẩm",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d0-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dưỡng mắt",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d1-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dưỡng môi",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d2-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Chống nắng da mặt",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d3-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Mặt nạ",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d4-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81cc-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dụng cụ chăm sóc da mặt",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": null,
+    "Name": "Chăm sóc cơ thể",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d6-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Sữa tắm",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d7-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Xà phòng",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d8-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Tẩy tế bào chết body",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81d9-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dưỡng da tay/chân",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81da-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Chống nắng cơ thể",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81db-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Khử mùi",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81dc-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Tẩy lông/triệt lông",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81dd-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Dưỡng thể",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81de-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81d5-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Bộ dụng cụ chăm sóc cơ thể",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81df-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": null,
+    "Name": "Chăm sóc cá nhân",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81e0-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81df-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Chăm sóc phụ nữ",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81e1-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81df-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Chăm sóc răng miệng",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81e2-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81df-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Chăm sóc sức khỏe",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81e3-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81df-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Khăn giấy/ khăn ướt",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81e4-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": null,
+    "Name": "Thực phẩm chức năng",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81e5-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81e4-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Hỗ trợ làm đẹp",
+    "Description": ""
+  },
+  {
+    "Id": "cdab81e6-faf2-11ee-ad1e-f889d243ee30",
+    "ImageId": null,
+    "ParentId": "cdab81e4-faf2-11ee-ad1e-f889d243ee30",
+    "Name": "Hỗ trợ sức khỏe",
+    "Description": ""
   }
 ]
