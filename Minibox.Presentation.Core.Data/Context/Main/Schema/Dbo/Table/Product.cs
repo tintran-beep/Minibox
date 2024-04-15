@@ -13,19 +13,18 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         public Guid? BrandId { get; set; }
         public Guid? CoverImageId { get; set; }
         public Guid? CoverVideoId { get; set; }
+
         public string SKU { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 
         public virtual Brand? Brand { get; set; }
-        public virtual Category? Category { get; set; }
-        public virtual Image? CoverImage { get; set; }
-        public virtual Video? CoverVideo { get; set; }
+        public virtual Media? CoverImage { get; set; }
+        public virtual Media? CoverVideo { get; set; }
 
+        public virtual ICollection<Media>? OtherImages { get; set; }
         public virtual ICollection<ProductProperty>? ProductProperties { get; set; }
         public virtual ICollection<ProductCategory>? ProductCategories { get; set; }
-        public virtual ICollection<ProductOtherImage>? ProductOtherImages { get; set; }
-        public virtual ICollection<ProductClassification>? ProductClassifications { get; set; }
     }
 
     public class ProductEntityTypeConfiguration : IEntityTypeConfiguration<Product>
@@ -37,9 +36,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
             builder.Property(x => x.SKU).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Name).HasMaxLength(120).IsRequired();
             builder.Property(x => x.Description).HasMaxLength(3000).IsRequired();
-
-            builder.HasOne(x => x.CoverImage).WithOne(x => x.Product).HasForeignKey<Product>(x => x.CoverImageId);
-            builder.HasOne(x => x.CoverVideo).WithOne(x => x.Product).HasForeignKey<Product>(x => x.CoverVideoId);
 
             builder.HasOne(x => x.Brand).WithMany(x => x.Products).HasForeignKey(x => x.BrandId);
 

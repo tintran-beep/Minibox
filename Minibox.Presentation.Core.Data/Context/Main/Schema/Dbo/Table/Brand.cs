@@ -16,7 +16,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
         public string Origin { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 
-        public virtual Image? Image { get; set; }
         public virtual ICollection<Product>? Products { get; set; }
     }
 
@@ -29,8 +28,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main.Schema.Dbo.Table
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Origin).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Description).HasMaxLength(3000).IsRequired();
-
-            builder.HasOne(x => x.Image).WithOne(x => x.Brand).HasForeignKey<Brand>(x => x.ImageId);
 
             builder.ToTable(name: nameof(Brand), schema: Share.Library.Constant.MiniboxConstants.DbSchema.Dbo);
 

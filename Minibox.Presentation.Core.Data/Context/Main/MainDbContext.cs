@@ -21,9 +21,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main
         public virtual DbSet<Image> Image { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductCategory> ProductCategory { get; set; }
-        public virtual DbSet<ProductClassification> ProductClassification { get; set; }
-        public virtual DbSet<ProductClassificationDetail> ProductClassificationsDetail { get; set; }
-        public virtual DbSet<ProductOtherImage> ProductOtherImage { get; set; }
         public virtual DbSet<ProductProperty> ProductPropertie { get; set; }
         public virtual DbSet<Video> Video { get; set; }
         #endregion
@@ -35,13 +32,14 @@ namespace Minibox.Presentation.Core.Data.Context.Main
             //Administrative Directory
             new AddressEntityTypeConfiguration().Configure(builder.Entity<Address>());
 
-            new AddressEntityTypeConfiguration().Configure(builder.Entity<Address>());
+            new CountryEntityTypeConfiguration().Configure(builder.Entity<Country>());
 
             new DistrictEntityTypeConfiguration().Configure(builder.Entity<District>());
 
             new ProvinceEntityTypeConfiguration().Configure(builder.Entity<Province>());
 
             new WardEntityTypeConfiguration().Configure(builder.Entity<Ward>());
+
             //------------------------
 
             new BrandEntityTypeConfiguration().Configure(builder.Entity<Brand>());
@@ -53,12 +51,6 @@ namespace Minibox.Presentation.Core.Data.Context.Main
             new ProductEntityTypeConfiguration().Configure(builder.Entity<Product>());
 
             new ProductCategoryEntityTypeConfiguration().Configure(builder.Entity<ProductCategory>());
-
-            new ProductClassificationEntityTypeConfiguration().Configure(builder.Entity<ProductClassification>());
-
-            new ProductClassificationDetailEntityTypeConfiguration().Configure(builder.Entity<ProductClassificationDetail>());
-
-            new ProductOtherImageEntityTypeConfiguration().Configure(builder.Entity<ProductOtherImage>());
 
             new ProductPropertyEntityTypeConfiguration().Configure(builder.Entity<ProductProperty>());
 
