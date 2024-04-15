@@ -73,14 +73,24 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Implementation
             return await _dbSet.AnyAsync();
         }
 
+        public virtual async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate) 
+        {
+            return await _dbSet.AnyAsync(predicate);
+        }
+
         public virtual async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
         {
             return await _dbSet.CountAsync(predicate);
         }
 
-        public virtual async Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate) 
+        public virtual async Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            return await _dbSet.AnyAsync(predicate);
+            return await _dbSet.FirstOrDefaultAsync(predicate);
+        }
+
+        public virtual async Task<IEnumerable<TEntity>> FindAllAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
         }
 
         public virtual IQueryable<TEntity> Query(bool isNoTracking = false)

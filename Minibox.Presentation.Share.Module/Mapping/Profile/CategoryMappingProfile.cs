@@ -3,11 +3,11 @@ using Minibox.Presentation.Share.Model.ViewModel;
 
 namespace Minibox.Presentation.Share.Module.Mapping.Profile
 {
-    public class BrandMappingProfile : AutoMapper.Profile
+    public class CategoryMappingProfile : AutoMapper.Profile
     {
-        public BrandMappingProfile() 
+        public CategoryMappingProfile()
         {
-            CreateMap<Brand, BrandVM>().ReverseMap();
+            CreateMap<Category, CategoryVM>().ReverseMap();
         }
     }
 }

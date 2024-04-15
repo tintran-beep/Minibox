@@ -18,8 +18,11 @@ namespace Minibox.Presentation.Core.Data.Infrastructure.Interface
         void Delete(Expression<Func<TEntity, bool>> predicate);
 
         Task<bool> AnyAsync();
+        Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate);
         Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate);
-        Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate);
+
+        Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> FindAllAsync(Expression<Func<TEntity, bool>> predicate);
 
         IQueryable<TEntity> Query(bool isNoTracking = false);
         IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate, bool isNoTracking = false);
