@@ -18,11 +18,9 @@ namespace Minibox.Presentation.Core.Data.Context.Main
 
         public virtual DbSet<Brand> Brand { get; set; }
         public virtual DbSet<Category> Category { get; set; }
-        public virtual DbSet<Image> Image { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductCategory> ProductCategory { get; set; }
         public virtual DbSet<ProductProperty> ProductPropertie { get; set; }
-        public virtual DbSet<Video> Video { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -46,15 +44,11 @@ namespace Minibox.Presentation.Core.Data.Context.Main
 
             new CategoryEntityTypeConfiguration().Configure(builder.Entity<Category>());
 
-            new ImageEntityTypeConfiguration().Configure(builder.Entity<Image>());
-
             new ProductEntityTypeConfiguration().Configure(builder.Entity<Product>());
 
             new ProductCategoryEntityTypeConfiguration().Configure(builder.Entity<ProductCategory>());
 
             new ProductPropertyEntityTypeConfiguration().Configure(builder.Entity<ProductProperty>());
-
-            new VideoEntityTypeConfiguration().Configure(builder.Entity<Video>());
             #endregion
 
             base.OnModelCreating(builder);
